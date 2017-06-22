@@ -47,6 +47,6 @@
   display: inline-flex;
 }
 
-ul.cart-items {
-  list-style-type: none;
+.table td {
+  font-weight: bold;
 }
