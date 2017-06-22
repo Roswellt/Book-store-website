@@ -2,14 +2,47 @@
   background-color: white;
   text-align: center;
 }
+
 .jumbotron.category {
   background-color: white;
+  padding: 0;
+  padding-top: 48px;
+  margin: 0;
 }
+
 .space {
   width: 100%;
   margin-top: 3%;
 }
 
-.category .col-sm-2 {
-  cursor:pointer;
+.space-medium {
+  width: 100%;
+  margin-top: 5%;
+}
+
+.category .col-sm-2 img {
+  cursor: pointer;
+}
+
+.responsive.index img {
+  cursor: pointer;
+}
+
+.dropdown.category {
+  position: absolute;
+  right: 0px;
+  width: 200px;
+  padding: 10px;
+}
+
+.title {
+  padding-left: 1%;
+}
+
+.responsive.index {
+  padding-left: 1%;
+}
+
+.dropdown-menu>li>a {
+  display: inline-flex;
 }
