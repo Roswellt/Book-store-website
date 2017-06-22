@@ -46,3 +46,7 @@
 .dropdown-menu>li>a {
   display: inline-flex;
 }
+
+ul.cart-items {
+  list-style-type: none;
+}
