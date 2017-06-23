@@ -50,3 +50,71 @@
 .table td {
   font-weight: bold;
 }
+
+.table-number{
+  padding-top: 50px !important;
+}
+
+.table-number.quantity {
+  padding-left: 30px;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.book-information {
+  display: inline-block;
+}
+
+.list-group-item {
+  border: none;
+  padding-bottom: 20px;
+  padding-left: 0;
+}
+
+.summary-left {
+  float: left;
+  width: auto;
+}
+
+.summary-right {
+  float: right;
+  width: auto;
+}
+
+.order-summary {
+  width: 280px;
+}
+
+.summary-prices {
+  border-bottom: 1px solid black;
+}
+
+.summary-container {
+  width: auto;
+  border: 1px solid grey;
+}
+
+#last-li {
+  margin-bottom: 20px;
+}
+
+.summary-left h3 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  width: auto;
+  padding-bottom: 30px;
+}
+
+.btn-block {
+  margin-bottom: 30px;
+  height: 50px;
+  font-size: 20px;
+}

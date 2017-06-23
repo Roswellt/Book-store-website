@@ -43,12 +43,11 @@
 
   <!--Start of the shopping cart -->
   <div class="container-fluid">
-    <div class="space-medium"></div>
     <div class="row">
 
       <!--Cart items container -->
       <div class="col-lg-8">
-        
+
         <!--Table for each item in cart-->
         <table class="table">
           <thead>
@@ -60,22 +59,63 @@
           </thead>
           <tbody>
             <tr>
-              <td><img src="images/book1-small.jpg"/></td>
-              <td>1</td>
-              <td>$25.99</td>
+              <td>
+                <img src="images/book1-small.jpg" />
+                <div class="book-information">
+                  <h2>The Hunger Games</h2>
+                  <p>By Susanne Collins</p>
+                </div>
+              </td>
+              <td class="table-number quantity">1</td>
+              <td class="table-number">$25.99</td>
             </tr>
             <tr>
-              <td><img src="images/book5-small.jpg"/></td>
-              <td>2</td>
-              <td>$19.99</td>
+              <td>
+                <img src="images/book5-small.jpg" />
+                <div class="book-information">
+                  <h2>The Help</h2>
+                  <p>By Kathryn Stockett</p>
+                </div>
+              </td>
+              <td class="table-number quantity">2</td>
+              <td class="table-number">$19.99</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="images/book10-small.jpg" />
+                <div class="book-information">
+                  <h2>The Letter</h2>
+                  <p>By Kathryn Hughes</p>
+                </div>
+              </td>
+              <td class="table-number quantity">1</td>
+              <td class="table-number">$13.99</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!--This is where the prices are displayed -->
-      <div class="col-lg-4">
-        <h1>TODO PRICES IS HERE</h1></div>
+      <div class="col-lg-4 summary-container">
+        <h2>Order Summary</h2>
+        <div class="order-summary">
+          <ul class="list-group summary-prices">
+            <li class="list-group-item">
+              <span class="summary-left">Subtotal (3 items)</span> <span class="summary-right">$59.97</span>
+            </li>
+            <li class="list-group-item">
+              <span class="summary-left">Estimated Shipping</span> <span class="summary-right">Free</span>
+            </li>
+            <li class="list-group-item" id="last-li">
+              <span class="summary-left">Estimated Tex</span> <span class="summary-right">$7.80</span>
+            </li>
+          </ul>
+          <div class="total">
+            <span class="summary-left"><h3>Order Total</h3></span> <span class="summary-right">$67.77</span>
+          </div>
+          <button type="button" class="btn btn-primary btn-block">Checkout</button>
+        </div>
+      </div>
     </div>
   </div>
 
