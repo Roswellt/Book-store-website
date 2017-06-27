@@ -61,6 +61,7 @@
             </tr>
           </thead>
           <tbody>
+
             <tr>
               <td>
                 <img src="images/book1-small.jpg" />
@@ -69,9 +70,19 @@
                   <p>By Susanne Collins</p>
                 </div>
               </td>
-              <td class="table-number quantity">1</td>
+
+              <!-- Form for book quantity input -->
+              <td class="table-number">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="quantity"></label>
+                    <input type="number" value="1" min="1" class="form-control input-quantity">
+                  </div>
+                </form>
+              </td>
               <td class="table-number">$25.99</td>
             </tr>
+
             <tr>
               <td>
                 <img src="images/book5-small.jpg" />
@@ -80,9 +91,20 @@
                   <p>By Kathryn Stockett</p>
                 </div>
               </td>
-              <td class="table-number quantity">2</td>
+
+              <!-- Form for book quantity input -->
+              <td class="table-number">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="quantity"></label>
+                    <input type="number" min="1" value="1" class="form-control input-quantity">
+                  </div>
+                </form>
+              </td>
+
               <td class="table-number">$19.99</td>
             </tr>
+
             <tr>
               <td>
                 <img src="images/book10-small.jpg" />
@@ -91,7 +113,17 @@
                   <p>By Kathryn Hughes</p>
                 </div>
               </td>
-              <td class="table-number quantity">1</td>
+
+              <!-- Form for book quantity input -->
+              <td class="table-number">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="quantity"></label>
+                    <input type="number" min="1" value="1" class="form-control input-quantity">
+                  </div>
+                </form>
+              </td>
+
               <td class="table-number">$13.99</td>
             </tr>
           </tbody>

@@ -184,3 +184,7 @@ img ~ p {
     text-decoration: none;
     cursor: pointer;
 }
+
+.input-quantity {
+  width: 70px !important;
+}
