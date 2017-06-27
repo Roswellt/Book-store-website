@@ -20,6 +20,11 @@
   margin-top: 5%;
 }
 
+.space-large {
+  width: 100%;
+  margin-top: 10%;
+}
+
 .category .col-sm-2 img {
   cursor: pointer;
 }
@@ -104,7 +109,6 @@
 .summary-left h3 {
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;
 }
 
 .total {
@@ -127,4 +131,17 @@
 img ~ p {
   text-align: center;
   font-size: x-large;
+}
+
+.book-container {
+  display: inline-flex;
+}
+
+.book-container .main-info {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.receipt-container {
+  display: inline-flex;
 }
