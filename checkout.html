@@ -52,11 +52,11 @@
     <div class="row">
 
       <!--Cart items container -->
-      <div class="col-lg-8">
+      <div class="col-lg-4">
+        <h2>Billing Information</h2>
 
         <!--Forms to fill in at checkout-->
-
-        <form id = "customer-info">
+        <form id="customer-info">
 
           <div class="form-group">
             <label for="first-name">First Name: </label>
@@ -97,11 +97,12 @@
           </div>
           <div class="form-group">
             <label for="Phone number">Phone number: </label>
-            <input type="tel" class="form-control" placeholder="1-(555)-555-5555" id="phone-number" required/>
+            <input type="tel" class="form-control" placeholder="(555)-555-5555" id="phone-number" required/>
           </div>
           <button type="submit" class="btn btn-default hidden">Submit</button>
         </form>
       </div>
+      
 
       <!--This is where the prices are displayed -->
       <div class="col-lg-4 summary-container">
@@ -139,7 +140,25 @@
   <!-- Validate the forms and mark those that are wrong -->
 
   <script>
-  
+    $(".btn-block").click(function() {
+
+      var zipcode = $("#zip-code").val();
+      var telephone = $("#phone-number").val();
+      var regexZip = new RegExp(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i);
+      var regexTel = new RegExp(/^([(])?\d{3}([)])?([-])?\d{3}([-])?\d{4}$/i);
+
+      if (regexZip.test(zipcode) && regexTel.test(telephone))
+        window.location.href = "checkout.html";
+      else if(!regexZip.test(zipcode)) {
+        alert("Zip code is not valid");
+        this.preventDefault();
+      }
+      else if (!regexTel.test(telephone)) {
+        alert("Telephone is not valid")
+        this.preventDefault();
+      }
+
+    });
   </script>
 
 </body>
