@@ -46,13 +46,14 @@
     </div>
   </nav>
 
+  <div class="col-lg-2"></div>
 
   <!--Start of the shopping cart -->
   <div class="container-fluid">
     <div class="row">
 
       <!--Cart items container -->
-      <div class="col-lg-8">
+      <div class="col-lg-6">
         <h2>Billing Information</h2>
 
         <!--Forms to fill in at checkout-->
@@ -101,6 +102,17 @@
           </div>
           <button type="submit" class="btn btn-default hidden">Submit</button>
         </form>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Added book to shopping cart!</p>
+          </div>
+
+        </div>
       </div>
 
 
@@ -123,7 +135,7 @@
             <span class="summary-left"><h3>Order Total</h3></span> <span class="summary-right">$67.77</span>
           </div>
           <div class="space-medium"></div>
-          <button type="button submit" form="customer-info" class="btn btn-primary btn-block">Checkout</button>
+          <button type="submit" form="customer-info" class="btn btn-primary btn-block">Checkout</button>
         </div>
       </div>
     </div>
@@ -140,6 +152,9 @@
   <!-- Validate the forms and mark those that are wrong -->
 
   <script>
+    var span = document.getElementsByClassName("close")[0];
+    var modal = document.getElementById('myModal');
+
     $(".btn-block").click(function() {
 
       var zipcode = $("#zip-code").val();
@@ -147,18 +162,34 @@
       var regexZip = new RegExp(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i);
       var regexTel = new RegExp(/^([(])?\d{3}([)])?([-])?\d{3}([-])?\d{4}$/i);
 
+
       if (regexZip.test(zipcode) && regexTel.test(telephone))
         window.location.href = "checkout.html";
       else if(!regexZip.test(zipcode)) {
-        alert("Zip code is not valid");
+        $(".modal-content p").text("Zip code wrong");
+        modal.style.display = "block";
         this.preventDefault();
       }
       else if (!regexTel.test(telephone)) {
-        alert("Telephone is not valid")
+        $(".modal-content p").text("Telephone number wrong");
+        modal.style.display = "block";
         this.preventDefault();
       }
 
     });
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
   </script>
 
 </body>
