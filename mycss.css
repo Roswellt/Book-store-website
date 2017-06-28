@@ -188,3 +188,21 @@ img ~ p {
 .input-quantity {
   width: 70px !important;
 }
+
+/* CSS for checkout page forms */
+
+.form-control {
+  width: 300px;
+}
+
+#house-number {
+  width: 100px;
+}
+
+#zip-code {
+  width: 140px;
+}
+
+.btn-default {
+  margin: 20px 0;
+}

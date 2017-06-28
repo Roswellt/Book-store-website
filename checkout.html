@@ -55,25 +55,51 @@
       <div class="col-lg-8">
 
         <!--Forms to fill in at checkout-->
-        <form class="form-inline">
+
+        <form id = "customer-info">
+
           <div class="form-group">
-            <label for="First Name">First Name:</label>
-            <input type="text" class="form-control" id="first-name">
+            <label for="first-name">First Name: </label>
+            <input type="text" class="form-control" id="first-name" required/>
           </div>
           <div class="form-group">
-            <label for="Last Name">Last Name:</label>
-            <input type="text" class="form-control" id="last-name">
+            <label for="last-name">Last Name: </label>
+            <input type="text" class="form-control" id="last-name" required/>
           </div>
-        </form>
-        <form>
+
           <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
+            <label for="email">Email: </label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" required/>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> Remember me</label>
+          <div class="form-group">
+            <label for="Country">Country: </label>
+            <input type="text" class="form-control" id="country" required/>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <div class="form-group">
+            <label for="Street">Street: </label>
+            <input type="txt" class="form-control" id="street" required/>
+          </div>
+          <div class="form-group">
+            <label for="street-number">Apt/Suite/House number: </label>
+            <input type="number" min="1" class="form-control" id="house-number" required/>
+          </div>
+          <div class="form-group">
+            <label for="City">City: </label>
+            <input type="text" class="form-control" id="city" required/>
+          </div>
+          <div class="form-group">
+            <label for="Zip Code">Zip Code: </label>
+            <input type="text" class="form-control" id="zip-code" required/>
+          </div>
+          <div class="form-group">
+            <label for="State/Province">State/Province: </label>
+            <input type="text" class="form-control" id="state-province" required/>
+          </div>
+          <div class="form-group">
+            <label for="Phone number">Phone number: </label>
+            <input type="tel" class="form-control" placeholder="1-(555)-555-5555" id="phone-number" required/>
+          </div>
+          <button type="submit" class="btn btn-default hidden">Submit</button>
         </form>
       </div>
 
@@ -96,7 +122,7 @@
             <span class="summary-left"><h3>Order Total</h3></span> <span class="summary-right">$67.77</span>
           </div>
           <div class="space-medium"></div>
-          <button type="button" class="btn btn-primary btn-block">Checkout</button>
+          <button type="button submit" form="customer-info" class="btn btn-primary btn-block">Checkout</button>
         </div>
       </div>
     </div>
@@ -109,6 +135,13 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  <!-- Validate the forms and mark those that are wrong -->
+
+  <script>
+  
+  </script>
+
 </body>
 
 
