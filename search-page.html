@@ -13,6 +13,8 @@
 </head>
 
 <body>
+
+  <!--Nav bar-->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -20,7 +22,7 @@
       </div>
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
-        <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="category.html">Action</a></li>
             <li><a href="category.html">Biography and Memoir</a></li>
@@ -38,15 +40,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="shopping-cart.html"><span class="glyphicon glyphicon-shopping-cart"></span>
-          <span class="badge">0</span>Shopping Cart</a></li>
+        <li class="active"><a href="shopping-cart.html"><span class="glyphicon glyphicon-shopping-cart"></span>
+          <span class="badge">0</span> Shopping Cart</a></li>
       </ul>
     </div>
   </nav>
-
-  <div class="jumbotron category">
-    <h1>Action</h1>
-  </div>
 
   <!--This will be the dropdown sorting button-->
   <div class="dropdown category">
@@ -158,6 +156,10 @@
     </div>
   </nav>
 
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
   <!--jQuery function that adds a checkmark to the sorting option that the user selects and clears previous checkmarks-->
   <script>
     $(".sort").click(function() {
@@ -168,16 +170,7 @@
     });
   </script>
 
-  <script>
-    $("img").click(function() {
-      window.location.href = "book-page.html";
-    });
-  </script>
 
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="slick/slick.min.js"></script>
 </body>
 
 </html>
