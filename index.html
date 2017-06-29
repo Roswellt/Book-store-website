@@ -43,9 +43,9 @@
   <div class="jumbotron">
     <h1>Fake Bookstore</h1>
     <p>A bookstore prototype</p>
-    <form class="form-inline">
+    <form class="form-inline" id="search-form">
       <div class="input-group">
-        <input type="search" class="form-control" size="50" placeholder="Search for books by title, keyword, author, or ISBN" required>
+        <input type="search" class="form-control" size="50" placeholder="Search for books by title, keyword, author, or ISBN" id="search">
         <div class="input-group-btn">
           <button type="button" class="btn btn-danger">Search</button>
         </div>
@@ -211,9 +211,22 @@
     });
   </script>
 
+  <!-- Each image directs to book page -->
   <script>
     $("img").click(function() {
       window.location.href = "book-page.html";
+    });
+  </script>
+
+  <!-- Search button directs to search page -->
+  <script>
+    $(".btn-danger").click(function(){
+      if($("#search").val() == "") {
+        $("#search-form").submit(function(e){
+          e.preventDefault();
+        });
+      } else
+          window.location.href = "search-page.html"
     });
   </script>
 
