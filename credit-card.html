@@ -54,65 +54,44 @@
 
       <!--Cart items container -->
       <div class="col-lg-6">
-        <h2>Billing Information</h2>
+        <h2>Payment Method</h2>
 
         <!--Forms to fill in at checkout-->
-        <form id="customer-info">
+        <form id="payment-info">
 
           <div class="form-group">
-            <label for="first-name">First Name: </label>
-            <input type="text" class="form-control" id="first-name" required/>
+            <label for="payment-option">Select payment option: </label>
+            <select name="format" style="height: 50px" id="format-type">
+                <option value="1">Visa</option>
+                <option value="2">Paypal</option>
+                <option value="3">Mastercard</option>
+                <option value="4">American Express</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="last-name">Last Name: </label>
-            <input type="text" class="form-control" id="last-name" required/>
+            <label for="card-number">Card number: </label>
+            <input type="number" class="form-control" id="card-number" required/>
           </div>
 
           <div class="form-group">
-            <label for="email">Email: </label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com" required/>
+            <label for="expiration-date">Expiration date: </label>
+            <input type="date" class="form-control" id="expiration-date" required/>
           </div>
           <div class="form-group">
-            <label for="Country">Country: </label>
-            <input type="text" class="form-control" id="country" required/>
-          </div>
-          <div class="form-group">
-            <label for="Street">Street: </label>
-            <input type="txt" class="form-control" id="street" required/>
-          </div>
-          <div class="form-group">
-            <label for="street-number">Apt/Suite/House number: </label>
-            <input type="number" min="1" class="form-control" id="house-number" required/>
-          </div>
-          <div class="form-group">
-            <label for="City">City: </label>
-            <input type="text" class="form-control" id="city" required/>
-          </div>
-          <div class="form-group">
-            <label for="Zip Code">Zip Code: </label>
-            <input type="text" class="form-control" id="zip-code" required/>
-          </div>
-          <div class="form-group">
-            <label for="State/Province">State/Province: </label>
-            <input type="text" class="form-control" id="state-province" required/>
-          </div>
-          <div class="form-group">
-            <label for="Phone number">Phone number: </label>
-            <input type="tel" class="form-control" placeholder="(555)-555-5555" id="phone-number" required/>
-          </div>
-          <button type="submit" class="btn btn-default hidden">Submit</button>
-        </form>
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
-          <!-- Modal content -->
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p></p>
+            <label for="security-code">Security code: </label>
+            <input type="number" class="form-control" id="security-code" required/>
           </div>
 
-        </div>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p></p>
+            </div>
+
+          </div>
       </div>
 
 
@@ -135,7 +114,7 @@
             <span class="summary-left"><h3>Order Total</h3></span> <span class="summary-right">$67.77</span>
           </div>
           <div class="space-medium"></div>
-          <button type="submit" form="customer-info" class="btn btn-primary btn-block">Continue</button>
+          <button type="submit" form="payment-info" class="btn btn-primary btn-block">Checkout</button>
         </div>
       </div>
     </div>
@@ -150,32 +129,32 @@
   <script type="text/javascript" src="slick/slick.min.js"></script>
 
   <!-- Validate the forms and mark those that are wrong -->
-
   <script>
+
     var span = document.getElementsByClassName("close")[0];
     var modal = document.getElementById('myModal');
 
-    $(".btn-block").click(function() {
+    $(".btn-block").click(function(){
+      var cardNumber = $("#card-number").val();
+      var securityCode = $("#security-code").val();
+      var regexCN = new RegExp(/^\d{16}$/i);
+      var regexSC = new RegExp(/^\d{3}$/i);
 
-      var zipcode = $("#zip-code").val();
-      var telephone = $("#phone-number").val();
-      var regexZip = new RegExp(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i);
-      var regexTel = new RegExp(/^([(])?\d{3}([)])?([-])?\d{3}([-])?\d{4}$/i);
+      if(regexSC.test(securityCode) && regexCN.test(cardNumber)) {
+        alert("Succesfully bought books");
+        window.location.href = "index.html";
+      }
 
-
-      if (regexZip.test(zipcode) && regexTel.test(telephone))
-        window.location.href = "credit-card.html";
-      else if(!regexZip.test(zipcode)) {
-        $(".modal-content p").text("Zip code wrong");
+      else if (!regexCN.test(cardNumber)) {
+        $(".modal-content p").text("Card number must be 16 digits long");
         modal.style.display = "block";
-        $("#customer-info").submit(function(e) {
+        $("#payment-info").submit(function(e) {
           e.preventDefault();
         });
-      }
-      else if (!regexTel.test(telephone)) {
-        $(".modal-content p").text("Telephone number wrong");
+      } else if (!regexSC.test(securityCode)) {
+        $(".modal-content p").text("Security code must be 3 digits long");
         modal.style.display = "block";
-        $("#customer-info").submit(function(e) {
+        $("#payment-info").submit(function(e) {
           e.preventDefault();
         });
       }
@@ -193,8 +172,8 @@
         modal.style.display = "none";
       }
     }
-
   </script>
+
 
 </body>
 

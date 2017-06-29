@@ -206,3 +206,13 @@ img ~ p {
 .btn-default {
   margin: 20px 0;
 }
+
+/* CSS for credit card page */
+
+#security-code {
+  width: 70px;
+}
+
+#expiration-date {
+  width: 170px;
+}
