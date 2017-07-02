@@ -10,6 +10,11 @@
   margin: 0;
 }
 
+/* Nav search button css */
+#nav-search {
+  width: 300px;
+}
+
 .space {
   width: 100%;
   margin-top: 3%;
@@ -206,10 +211,6 @@ img ~ p {
 
 #zip-code {
   width: 140px;
-}
-
-.btn-default {
-  margin: 20px 0;
 }
 
 /* CSS for credit card page */
