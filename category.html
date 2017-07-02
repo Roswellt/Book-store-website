@@ -37,11 +37,11 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" id="nav-search-form">
        <div class="input-group">
          <input type="text" class="form-control" placeholder="Search" id="nav-search">
          <div class="input-group-btn">
-           <button class="btn btn-default" type="submit">
+           <button class="btn btn-default nav-search" type="button">
              <i class="glyphicon glyphicon-search"></i>
            </button>
          </div>
@@ -181,6 +181,18 @@
   <script>
     $("img").click(function() {
       window.location.href = "book-page.html";
+    });
+  </script>
+
+  <!-- Search button directs to search page -->
+  <script>
+    $(".nav-search").click(function(){
+      if($("#nav-search").val() == "") {
+        $("#nav-search-form").submit(function(e){
+          e.preventDefault();
+        });
+      } else
+          window.location.href = "search-page.html"
     });
   </script>
 
