@@ -84,6 +84,8 @@
   padding-left: 0;
 }
 
+/* CSS checkout page */
+
 .summary-left {
   float: left;
   width: auto;
@@ -221,4 +223,10 @@ img ~ p {
 
 #expiration-date {
   width: 170px;
+}
+
+.slick-active p,
+.col-sm-2 p
+{
+  cursor: pointer;
 }
