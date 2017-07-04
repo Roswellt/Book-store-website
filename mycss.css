@@ -192,11 +192,6 @@ img ~ p {
     cursor: pointer;
 }
 
-.category-dropdown-container {
-  width: 100%;
-  padding: 60px 0;
-}
-
 .input-quantity {
   width: 70px !important;
 }
