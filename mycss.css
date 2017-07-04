@@ -6,7 +6,7 @@
 .jumbotron.category {
   background-color: white;
   padding: 0;
-  padding-top: 48px;
+  padding-top: 10px;
   margin: 0;
 }
 
@@ -39,10 +39,10 @@
 }
 
 .dropdown.category {
-  position: absolute;
-  right: 0px;
-  width: 200px;
-  padding: 10px;
+  float: right;
+  padding-right: 20px;
+  margin-left: 100%;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -230,3 +230,5 @@ img ~ p {
 {
   cursor: pointer;
 }
+
+/* Color palette CSS */
